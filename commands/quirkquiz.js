@@ -3,8 +3,7 @@ const quirkController = require("../App/controllers/quirkController.js")
 
 module.exports = { 
     execute: message => { 
-        const userId = message.author.id
-        const {quirk_time} = require("../g_config.json");
+        const userId = message.author.id        
 
         userController.get(userId)
             .then(async res => {
@@ -38,10 +37,10 @@ module.exports = {
                             var hoje = new Date();
                             var horas = (hoje - dataDoUltimoQuirk) / 36e5
 
-                            var decimal = (Math.abs((quirk_time - horas)) - Math.floor((quirk_time - horas)))
+                            var decimal = (Math.abs((process.env.quirk_time - horas)) - Math.floor((process.env.quirk_time - horas)))
                             var minutos = (decimal*60).toFixed(0)
-                            if((quirk_time - horas) > 0) {
-                                message.reply(`fica frio aí, ainda faltam ${(quirk_time - horas).toFixed(0)} horas e ${minutos} minutos para que você possa tentar novamente.`)
+                            if((process.env.quirk_time - horas) > 0) {
+                                message.reply(`fica frio aí, ainda faltam ${(process.env.quirk_time - horas).toFixed(0)} horas e ${minutos} minutos para que você possa tentar novamente.`)
                                 return;
                             }
 
