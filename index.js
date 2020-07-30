@@ -21,7 +21,7 @@ client.on('message', async message => {
   const command = message.content.split(process.env.prefix)[1].split(" ")[0].toLowerCase()
   if(commands.indexOf(command) === -1) {
     message.reply("Use o comando certo cara...");
-    return;    
+    return;
   }
   
   bot.read(message, command).then(res => {
