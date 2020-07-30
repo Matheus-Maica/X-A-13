@@ -19,25 +19,9 @@ module.exports = {
         })
     },
     get: async userId => {
-        return new Promise(async (resolve, reject) => {
-            try {
-                const user = await User.find({ userId: userId })
-
-                resolve(user)
-            } catch(err) {
-                reject(err)
-            }
-        })
+        return User.find({ userId: userId })
     },
     updateLasQuirk: async userId => {
-        return new Promise(async (resolve, reject) => {
-            try {
-                const user = await User.findOneAndUpdate({ userId: userId }, { lastQuirk: new Date() })
-
-                resolve(user)
-            } catch(err) {
-                reject(err)
-            }
-        })
+        return User.findOneAndUpdate({ userId: userId }, { lastQuirk: new Date() })
     }
 }

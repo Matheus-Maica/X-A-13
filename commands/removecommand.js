@@ -15,12 +15,12 @@ module.exports = {
         
         
         const path = __dirname + "/" + command + ".js"
-        fs.unlink(path, err => {
-            if (err) {
-                message.reply("esse comando n existe :(")
-            };
+        // fs.unlink(path, err => {
+        //     if (err) {
+        //         message.reply("esse comando n existe :(")
+        //     };
 
-            message.react("👌")
-        })
+        //     message.react("👌")
+        // })
     }
 }

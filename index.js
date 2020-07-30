@@ -11,9 +11,9 @@ var bot = new Bot();
 client.on('ready', async () => {
   console.log(`Logged in as ${client.user.tag}!`);
   
-  await fs.readdir("./commands/", (err, files) => {
-    commands = files.map(el => el.split('.')[0])    
-  })  
+  // await fs.readdir("./commands/", (err, files) => {
+  //   commands = files.map(el => el.split('.')[0])    
+  // })  
 });
 
 client.on('message', async message => {  
