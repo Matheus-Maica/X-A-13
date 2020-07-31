@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 module.exports = { 
-    default: () => message.reply("Remova um comando adicionado via discord *não funciona com comandos padrão*"),
+    default: message => message.reply("Remova um comando adicionado via discord *não funciona com comandos padrão*"),
     execute: message => {        
         const command = message.content.split(process.env.prefix)[1].split(" ")[1]
         const fileToRemove = require(`../commands/${command}`);

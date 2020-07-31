@@ -1,12 +1,12 @@
 module.exports = {
     PERMISSIONS: ["BAN_MEMBERS"],
-    default: () => message.reply("Inicie uma votação democrática para decidir o banimento de um usuário (só pode ser executado por usuários com permissão para isso). *voteban @Usuario"),
+    default: message => message.reply("Inicie uma votação democrática para decidir o banimento de um usuário (só pode ser executado por usuários com permissão para isso). *voteban @Usuario"),
     execute: message => {
         message.channel.send(`${message.mentions.users.first()} está sob julgamento, reaja com :coffin: se você apoia esse ban (${Math.round((message.guild.members.cache.filter(member => !member.user.bot).size)/2)} votos necessários)`)
             .then(mess => {
                 mess.react("⚰️")
                     .then(m => {
-                        mess.awaitReactions((reaction, user) => ['⚰️'].includes(reaction.emoji.name), { max: Math.round((message.guild.members.cache.filter(member => !member.user.bot).size)/2), time: 60000*3, errors: ['time'] })
+                        mess.awaitReactions((reaction, user) => ['⚰️'].includes(reaction.emoji.name), { max: Math.round((message.guild.members.cache.filter(member => !member.user.bot).size)/4), time: 60000*3, errors: ['time'] })
                             .then(collected => {
                                 try {                                
                                     message.channel.send(`O martelo da justiça e democracia determinou a sentença! Sayonara ${message.mentions.users.first()}.`);
