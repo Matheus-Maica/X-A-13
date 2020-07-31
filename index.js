@@ -6,7 +6,8 @@ const Bot = require('./util.js')
 var bot = new Bot();
 let commands = [];
 client.on('ready', async () => {  
-  console.log(`Logged in as ${client.user.tag}!`);  
+  console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setPresence({ activity: { name: `${process.env.prefix}help` }, status: 'online' });
   await fs.readdir("./commands/", (err, files) => {
     commands = files.map(el => el.split('.')[0])    
   })  

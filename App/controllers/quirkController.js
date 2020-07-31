@@ -13,5 +13,6 @@ module.exports = {
             dodge_chance
         })
     },
-    get: async () => Quirk.find({})
+    get: async () => Quirk.find({}),
+    rm: async query => Quirk.findOneAndRemove({ nome: query })
 }

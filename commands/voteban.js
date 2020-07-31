@@ -1,5 +1,6 @@
 module.exports = {
     PERMISSIONS: ["BAN_MEMBERS"],
+    default: () => message.reply("Inicie uma votação democrática para decidir o banimento de um usuário (só pode ser executado por usuários com permissão para isso). *voteban @Usuario"),
     execute: message => {
         message.channel.send(`${message.mentions.users.first()} está sob julgamento, reaja com :coffin: se você apoia esse ban (${Math.round((message.guild.members.cache.filter(member => !member.user.bot).size)/2)} votos necessários)`)
             .then(mess => {

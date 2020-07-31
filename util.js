@@ -3,12 +3,17 @@ module.exports = class Bot {
 		return new Promise((resolve, reject) => {			
 			const exc = require(`./commands/${command}.js`)				
 			if(exc.PERMISSIONS) {				
-				if(!message.member.hasPermission(exc.PERMISSIONS)) reject('NO PERM')
+				if(!message.member.hasPermission(exc.PERMISSIONS)) return reject('NO PERM')
+			} else if(!exc.execute){ 
+				return reject("Função execute não encontrada") 
+			} else {
+				if(`${process.env.prefix}${command}` === message.content && exc.default) {
+					exc.default()
+				} else {
+					exc.execute(message)
+				}				
+				return resolve(message.author.username)
 			}
-			if(!exc.execute) reject("Função execute não encontrada")
-			exc.execute(message)
-						
-			resolve(message.author.username)
 		})
 	}
 }

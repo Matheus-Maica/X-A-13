@@ -1,5 +1,6 @@
 const fs = require("fs");
 module.exports = {    
+    default: () => message.reply("Adicione um novo comando ao BOT, digite: *addcommand function(message) { ... }"),
     execute: (message) => {
         const command = message.content.split(process.env.prefix)[1].split(" ")[0].toLowerCase()
         if(!message.content.split(`${process.env.prefix}${command} `)[1]) {
