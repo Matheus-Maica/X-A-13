@@ -2,9 +2,9 @@ const Quirk = require("../models/quirks.js")
 
 module.exports = {
     add: async data => {
-        const {nome, descricao, tipo, defesa, ataque, dodge_chance} = data;
+        const { nome, descricao, tipo, defesa, ataque, dodge_chance } = data;
             
-        const quirk = await Quirk.create({
+        return Quirk.create({
             nome,
             descricao,
             tipo,
@@ -12,10 +12,6 @@ module.exports = {
             ataque,
             dodge_chance
         })
-        
-        return quirk;
     },
-    get: async () => {
-        return Quirk.find({});
-    }
+    get: async () => Quirk.find({})
 }
