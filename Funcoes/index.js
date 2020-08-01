@@ -27,7 +27,7 @@ var functions = {
         let horas = (hoje - dataDoUltimoQuirk) / 36e5
         let decimal = (Math.abs((process.env.quirk_time - horas)) - Math.floor((process.env.quirk_time - horas)))                                        
 
-        if((process.env.quirk_time - horas) > 24) {
+        if((process.env.quirk_time - horas) > 0) {
             message.reply(`fica frio aí, ainda faltam ${(parseInt(process.env.quirk_time - horas).toFixed(0))} horas e ${(decimal*60).toFixed(0)} minutos para que você possa tentar novamente.`)            
             return false
         } else {
