@@ -8,7 +8,7 @@ module.exports = class Bot {
 			if(!exc.execute){ 
 				return reject("Função execute não encontrada") 
 			} else {
-				if(`${process.env.prefix}${command}` === message.content && exc.default) {
+				if((`${process.env.prefix}${command} -h` === message.content.toLowerCase() && exc.default) || (`${process.env.prefix}${command}` === message.content.toLowerCase() && exc.default)) {
 					exc.default(message)
 				} else {
 					exc.execute(message)

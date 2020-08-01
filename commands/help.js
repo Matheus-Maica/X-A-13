@@ -7,7 +7,7 @@ module.exports = {
             .setThumbnail('https://i.imgur.com/WdgxEnF.png')
             .setDescription('Olá, eu sou X Æ A-13, o filho bastardo do CEO da Tesla e SpaceX, meu pai não me aceita em casa pois eu não tenho um corpo físico, já que sou um BOT 🥺😔, então passo meu tempo assistindo boku no hero e criando um minigame do anime para as outras pessoas se divertirem. Confira os comandos:')
             .addFields(
-                { name: '• Caso queira saber a sintaxe e utilidade de determinado comando de maneira mais detalhada apenas digite:', value: '*<comando>' },
+                { name: '• Caso queira saber a sintaxe e utilidade de determinado comando de maneira mais detalhada apenas digite:', value: '*<comando> -h' },
                 { name: '\u200B', value: '\u200B' },
                 { name: `• ${process.env.prefix}addquirk`, value: `${process.env.prefix}addquirk <objeto js>` },
                 { name: `• ${process.env.prefix}rmquirk`, value: `${process.env.prefix}rmquirk <quirk>` },

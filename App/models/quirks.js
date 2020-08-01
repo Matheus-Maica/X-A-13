@@ -31,6 +31,34 @@ const Quirk = new mongoose.Schema({
     dodge_chance: {
         type: Number,
         required: true
+    },
+    oneforall: {
+        type: Boolean,
+        default: false,
+    },
+    allforone: {
+        type: Boolean,
+        default: false,
+    },
+    image: {
+        type: String
+    },
+    crit_chance: {
+        type: Number,
+        required: true
+    },
+    controlChance: {
+        type: Number,
+        required: true
+    },
+    funcaoprimaria: {
+        type: String,
+        required: true,
+        enum: ['ofensiva', 'defensiva', 'mobilidade', 'utilidade']
+    },
+    funcaosecundaria: {
+        type: String,        
+        enum: ['ofensiva', 'defensiva', 'mobilidade', 'utilidade']
     }
 });
 
