@@ -3,7 +3,7 @@ module.exports = {
     PERMISSIONS: ["ADMINISTRATOR"],
     default: message => message.reply("Remova uma quirk, sintaxe: *rmquirk <nome_da_quirk>"),
     execute: async message => {
-        await quirkController.add(message.content.split(" ")[1]).then(res => message.react("👍"))
+        await quirkController.rm(message.content.split(" ")[1]).then(res => message.react("👍"))
             .catch(err => message.reply(err.message))
     }
 }

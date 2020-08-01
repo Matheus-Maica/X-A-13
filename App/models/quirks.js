@@ -48,6 +48,6 @@ Quirk.pre('validate', function (next) {
     })    
 })
 
-const quirkModel = mongoose.model("Quirk", Quirk, "quirk");
+const quirkModel = mongoose.model("Quirk", Quirk, "Quirk");
 
 module.exports = quirkModel;
