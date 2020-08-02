@@ -27,7 +27,7 @@ var functions = {
         let horas = (hoje - dataDoUltimoQuirk) / 36e5
         let decimal = (Math.abs((process.env.quirk_time - horas)) - Math.floor((process.env.quirk_time - horas)))                                        
 
-        if((process.env.quirk_time - horas) > 0) {
+        if((process.env.quirk_time - horas) > 24) {
             message.reply(`fica frio aí, ainda faltam ${(parseInt(process.env.quirk_time - horas).toFixed(0))} horas e ${(decimal*60).toFixed(0)} minutos para que você possa tentar novamente.`)            
             return false
         } else {
@@ -42,14 +42,14 @@ var functions = {
             .setThumbnail(member.avatarURL())
             .addFields(                
                 { name: '\u200B', value: '\u200B' },
-                { name: "Tipo", value: `${quirk.nome === '0' ? 'Padrão' : quirk.tipo}` },
-                { name: "Defesa", value: `${quirk.defesa}` },
-                { name: "Ataque", value: `${quirk.ataque}` },
-                { name: "Chance de desviar", value: `${quirk.dodge_chance*100}%` },
+                { name: "Tipo:", value: `${quirk.nome === '0' ? 'Padrão' : quirk.tipo}\n`, inline: true },
+                { name: "Defesa:", value: `${quirk.defesa}\n`, inline: true },
+                { name: "Ataque:", value: `${quirk.ataque}\n`, inline: true },
+                { name: "Chance de desviar:", value: `${quirk.dodge_chance*100}%\n`, inline: true },
             )
             .setTimestamp()            
-            .setFooter('-X Æ A-13', 'https://i.imgur.com/WdgxEnF.png');
-    }
+            .setFooter('X Æ A-13', 'https://i.imgur.com/WdgxEnF.png');
+    },
 }
 
 module.exports = functions

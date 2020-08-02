@@ -1,10 +1,11 @@
 const userController = require("../App/controllers/userController.js")
 const quirkController = require("../App/controllers/quirkController.js")
-const { getRandomQuirk, timeSinceLastQuirk } = require("../Funcoes")
+const { getRandomQuirk, timeSinceLastQuirk, embed } = require("../Funcoes")
 
 module.exports = { 
-    execute: async message => { 
+    execute: async message => {
         const userId = message.author.id
+        const member = message.author
         var res,rquirk;
 
         await userController.get(userId)
@@ -30,8 +31,9 @@ module.exports = {
                 }
                 return;
             })
-            .then(async r => {            
-                if(r) message.reply(`Sua individualidade é: ${rquirk.nome}`)
+            .then(async r => {    
+                const qembed = embed(rquirk, member)        
+                if(r) message.reply(qembed)
                 return;
             })
     }
