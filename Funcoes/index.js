@@ -45,7 +45,7 @@ var functions = {
                 { name: "Tipo:", value: `${quirk.nome === '0' ? 'Padrão' : quirk.tipo}\n`, inline: true },
                 { name: "Defesa:", value: `${quirk.defesa}\n`, inline: true },
                 { name: "Ataque:", value: `${quirk.ataque}\n`, inline: true },
-                { name: "Chance de desviar:", value: `${quirk.dodge_chance*100}%\n`, inline: true },
+                { name: "Chance de desviar:", value: `${(quirk.agilidade + (1 - quirk.precisao))*100}%\n`, inline: true },
             )
             .setTimestamp()            
             .setFooter('X Æ A-13', 'https://i.imgur.com/WdgxEnF.png');

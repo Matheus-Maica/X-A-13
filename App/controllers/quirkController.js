@@ -2,19 +2,20 @@ const Quirk = require("../models/quirks.js")
 
 module.exports = {
     add: async data => {
-        const { nome, descricao, tipo, defesa, ataque, dodge_chance, funcaoprimaria, controlChance, crit_chance, funcaosecundaria } = data;
+        const { nome, descricao, tipo, defesa, ataque, funcaoprimaria, controlChance, crit_chance, funcaosecundaria, precisao, agilidade } = data;
         if(funcaosecundaria) {
             return Quirk.create({
                 nome,
                 descricao,
                 tipo,
                 defesa,
-                ataque,
-                dodge_chance,
+                ataque,                
                 funcaoprimaria,
                 controlChance,
                 crit_chance,
-                funcaosecundaria
+                funcaosecundaria,
+                precisao,
+                agilidade
             })
         } else {
             return Quirk.create({
@@ -22,11 +23,12 @@ module.exports = {
                 descricao,
                 tipo,
                 defesa,
-                ataque,
-                dodge_chance,
+                ataque,                
                 funcaoprimaria,
                 controlChance,
-                crit_chance
+                crit_chance,
+                precisao,
+                agilidade
             })            
         }
     },

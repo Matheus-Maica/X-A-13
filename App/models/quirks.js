@@ -28,10 +28,6 @@ const Quirk = new mongoose.Schema({
         min: 0,
         max: 100
     },
-    dodge_chance: {
-        type: Number,
-        required: true
-    },
     oneforall: {
         type: Boolean,
         default: false,
@@ -59,6 +55,14 @@ const Quirk = new mongoose.Schema({
     funcaosecundaria: {
         type: String,        
         enum: ['ofensiva', 'defensiva', 'mobilidade', 'utilidade']
+    },
+    agilidade: {
+        type: Number,
+        required: true,        
+    },
+    precisao: {
+        type: Number,
+        required: true,
     }
 });
 
