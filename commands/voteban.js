@@ -3,7 +3,7 @@ module.exports = {
     default: message => message.reply("Inicie uma votação democrática para decidir o banimento de um usuário (só pode ser executado por usuários com permissão para isso). *voteban @Usuario"),
     execute: message => {
         if(!message.mentions.users.first()) {
-            message.reply("você fez alguma merda no comando. Esqueceu de colocar o usuário? Tentou mencionar @everyone ou @here?")
+            message.reply("você fez alguma merda no comando. Esqueceu de colocar o usuário? Tentou mencionar everyone ou here?")
         } else {            
             message.channel.send(`${message.mentions.users.first()} está sob julgamento, reaja com ⚰️ se você apoia esse ban (${Math.round((message.guild.members.cache.filter(member => !member.user.bot).size)*0.15)} votos necessários)`)
                 .then(mess => {

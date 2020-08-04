@@ -33,6 +33,6 @@ module.exports = {
         }
     },
     get: async () => Quirk.find({}),
-    rm: async query => Quirk.findOneAndRemove({ nome: query }),
+    rm: async query => Quirk.findOneAndDelete({ nome: query }),
     getbyid: async id => Quirk.findById(id)
 }
