@@ -17,10 +17,7 @@ client.on('message', async message => {
   if(!message.content.startsWith(process.env.prefix)) return;
   if(message.author.bot) return;
   const command = message.content.split(process.env.prefix)[1].split(" ")[0].toLowerCase()
-  if(commands.indexOf(command) === -1) {
-    message.reply("não entendi, verifique o comando.");
-    return;
-  }
+  if(commands.indexOf(command) === -1) return;
   
   bot.read(message, command).then(res => console.log(`${res} está executando o comando ${command}`))
     .catch(err => {
