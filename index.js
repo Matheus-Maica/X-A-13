@@ -4,7 +4,7 @@ const client = new Discord.Client()
 const fs = require('fs');
 const Bot = require('./util.js')
 var bot = new Bot();
-let commands = [];
+let commands = [] // Teste
 client.on('ready', async () => {  
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ activity: { name: `${process.env.prefix}help` }, status: 'online' });
