@@ -15,7 +15,7 @@
     "discord.js-commando": "github:discordjs/Commando",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
-    "mongoose": "^5.9.25",
+    "mongoose": "^5.13.15",
     "node-opus": "^0.3.3",
     "util": "^0.12.3",
     "ytdl-core": "^2.1.7"
